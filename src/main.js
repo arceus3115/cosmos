@@ -3,3 +3,11 @@
 import "../data.js";
 import "../api-client.js";
 import "../app.js";
+
+if (import.meta.env.DEV) {
+  const addRecord = document.createElement("a");
+  addRecord.className = "add-record-link";
+  addRecord.href = "/tools/record-editor/";
+  addRecord.textContent = "+ Add a record";
+  document.querySelector(".top-actions").prepend(addRecord);
+}

@@ -384,7 +384,7 @@
         showErrors("#identityErrors", errors);
         return errors;
       }
-      if (!state.type) errors.push("Choose Tradition, Text, or Work.");
+      if (!Object.hasOwn(typeNames, state.type)) errors.push("Choose Tradition, Text, Story, or Work.");
       if (!state.label.trim()) errors.push("Enter a preferred label.");
       if (!graph?.canonical_checksum) errors.push("The active graph release did not provide a canonical checksum.");
       const normalizedLabel = state.label.normalize("NFC").trim().toLocaleLowerCase();

@@ -168,8 +168,6 @@
     edge.status = claim.status;
     edge.evidence = payload.evidence.map(item => item.id);
     edge._apiDetailsLoaded = true;
-    payload.sources.forEach(storeApiSource);
-    payload.unavailableIds.forEach(applyFallbackSource);
   }
 
   function applyFallbackSource(canonicalId) {

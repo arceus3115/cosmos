@@ -22,7 +22,7 @@ Open `http://127.0.0.1:5173`. Vite serves the Explore app with hot reload and pr
 
 ## Add a record (local curator workflow)
 
-With `make dev` running, open the editor route. Alternatively, `make editor` starts Vite and opens that route. The local editor saves unfinished drafts in this browser and exports proposal JSON. Validate and preview/apply a proposal in a Git branch with `ra-pipeline validate-proposal` and `ra-pipeline apply-proposal`; the apply command never publishes or deploys. See [the add-record ADR](docs/adr/0002-add-record-workflow.md) and [curator workflow tickets](plans/Religion%20Almanac%20Add%20Record%20Tickets.md).
+With `make dev` running, choose **+ Add a record** in the Explore header. Choose Story, Tradition, Text, or Work, describe it, attach sources and any optional connection, then export the proposal. Alternatively, `make editor` opens the editor directly. Drafts are saved in this browser. Validate and preview/apply a proposal in a Git branch with `ra-pipeline validate-proposal` and `ra-pipeline apply-proposal`; the apply command never publishes or deploys. The authoring link appears only during Vite development. See [the add-record ADR](docs/adr/0002-add-record-workflow.md) and [curator workflow tickets](plans/Religion%20Almanac%20Add%20Record%20Tickets.md).
 
 ## Explore
 

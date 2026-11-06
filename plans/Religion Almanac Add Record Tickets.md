@@ -12,7 +12,7 @@ These decisions are recorded in [ADR 0002](../docs/adr/0002-add-record-workflow.
 
 ## Implementation status
 
-The code and documentation for AR-001 through AR-012 are in the working tree. This status describes implementation, not acceptance: no automated tests or adversarial fixtures have been added or run, and the browser/API/CLI workflow has not received an end-to-end acceptance pass.
+The code and documentation for AR-001 through AR-012 are in the working tree. The Vite production build, all four example proposal validations, and database-free detail API checks for 18 nodes, 8 claims, and 7 sources pass. The running API was also checked after restart. The complete browser authoring workflow and adversarial fixtures still need an acceptance pass.
 
 | Ticket | Implementation status | Main deliverables |
 | --- | --- | --- |
@@ -80,7 +80,7 @@ Add `ra-pipeline apply-proposal <file>` that first validates the proposal, then 
 
 Create a separate local authoring page under `tools/record-editor/`, launched by a dedicated Make target that binds only to `127.0.0.1`. Keep it out of the public Explore navigation and site release artifacts. Add an explicit site-packaging allowlist if the publication workflow currently copies the repository wholesale. The tool uses the existing read-only graph/search API for lookup, keeps unfinished drafts in browser storage, and does not call a write endpoint.
 
-**Acceptance:** `make editor` starts the editor at a documented localhost URL and binds to loopback; the production site artifact excludes the editor page/assets and the normal frontend has no create link; a reload restores an unfinished local draft; clearing one draft does not clear unrelated drafts; no HTTP write request is made by the editor.
+**Acceptance:** `make editor` starts the editor at a documented localhost URL and binds to loopback; the development Explore header has an Add a record link, while the production site artifact excludes that link and the editor page/assets; a reload restores an unfinished local draft; clearing one draft does not clear unrelated drafts; no HTTP write request is made by the editor.
 
 ## AR-006 · Build type selection and duplicate search
 
