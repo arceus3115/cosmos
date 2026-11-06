@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f4f1e9" />
+    <meta name="description" content="Explore a cited, contestable map of stories, texts, and religious traditions." />
+    <title>Religion Almanac — Where stories travel</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./data.js" defer></script>
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to graph</a>
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Religion Almanac home">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+        <span>RELIGION<br />ALMANAC</span>
+      </a>
+      <nav class="top-nav" aria-label="Main navigation">
+        <a class="active" href="#main">Explore</a>
+        <a href="#method-note">Method</a>
+        <a href="#sources">Sources</a>
+      </nav>
+      <div class="top-actions">
+        <span class="edition-label"><span class="status-dot"></span> SEED EDITION <span class="edition-number">01</span></span>
+        <button class="icon-button" id="shareButton" aria-label="Copy link to this view" title="Copy share link">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.5 12.5 15.8 8m-7.3 4 7.3 4M6.3 15.7a3.2 3.2 0 1 0 0-6.4 3.2 3.2 0 0 0 0 6.4Zm12.5-7.5a3.2 3.2 0 1 0 0-6.4 3.2 3.2 0 0 0 0 6.4Zm0 15a3.2 3.2 0 1 0 0-6.4 3.2 3.2 0 0 0 0 6.4Z"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="intro" aria-labelledby="page-title">
+        <div>
+          <div class="eyebrow"><span>01</span> / A FIELD GUIDE TO NARRATIVE</div>
+          <h1 id="page-title">Where stories<br /><em>travel.</em></h1>
+        </div>
+        <div class="intro-copy">
+          <p>Follow stories across traditions and centuries. Every connection is a scholarly claim, with its evidence and uncertainty in view.</p>
+          <div class="intro-meta"><span class="meta-rule"></span><span>18 RECORDS</span><span>·</span><span>8 CITED CLAIMS</span><span>·</span><span>2 GUIDED PATHS</span></div>
+        </div>
+      </section>
+
+      <section class="workspace" aria-label="Interactive religion almanac">
+        <aside class="sidebar" aria-label="Graph controls">
+          <div class="sidebar-heading"><span class="section-number">01</span><h2>Explore</h2><button id="resetButton" class="text-button">Reset</button></div>
+
+          <label class="search-wrap" for="searchInput">
+            <svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5"></circle><path d="m13 13 4 4"></path></svg>
+            <input id="searchInput" type="search" placeholder="Find a story, text…" autocomplete="off" />
+            <kbd>/</kbd>
+          </label>
+          <div id="searchResults" class="search-results" hidden></div>
+
+          <div class="control-block">
+            <div class="control-label">VIEW</div>
+            <div class="view-toggle" role="tablist" aria-label="Graph view">
+              <button type="button" class="view-tab active" id="graphTab" role="tab" aria-selected="true" data-view="graph"><span class="mini-icon graph-mini">⌘</span>Graph</button>
+              <button type="button" class="view-tab" id="timelineTab" role="tab" aria-selected="false" data-view="timeline"><span class="mini-icon">↔</span>Timeline</button>
+              <button type="button" class="view-tab" id="listTab" role="tab" aria-selected="false" data-view="list"><span class="mini-icon">☷</span>Index</button>
+            </div>
+          </div>
+
+          <div class="control-block">
+            <div class="control-label">TRADITIONS <span id="traditionCount" class="count-pill">4</span></div>
+            <div id="traditionFilters" class="tradition-filters"></div>
+          </div>
+
+          <div class="control-block edge-filter-block">
+            <div class="control-label">CONNECTIONS</div>
+            <div class="select-wrap">
+              <select id="edgeTypeFilter" aria-label="Filter by connection type"><option value="all">All connection types</option></select>
+              <span aria-hidden="true">⌄</span>
+            </div>
+            <div class="select-wrap">
+              <select id="consensusFilter" aria-label="Filter by scholarly consensus">
+                <option value="all">Any consensus level</option>
+                <option value="consensus">Consensus</option>
+                <option value="majority">Majority view</option>
+                <option value="contested">Contested</option>
+                <option value="fringe">Fringe</option>
+              </select><span aria-hidden="true">⌄</span>
+            </div>
+            <label class="range-label" for="confidenceFilter"><span>Minimum confidence</span><strong id="confidenceValue">1 / 5</strong></label>
+            <input id="confidenceFilter" class="range-input" type="range" min="1" max="5" value="1" />
+            <div class="date-filter-label">DATE RANGE <span>YEAR</span></div>
+            <div class="date-inputs"><label><span>From</span><input id="dateFrom" type="number" value="-3000" aria-label="Filter date from year" /></label><span class="date-dash">—</span><label><span>To</span><input id="dateTo" type="number" value="2026" aria-label="Filter date to year" /></label></div>
+          </div>
+
+          <div class="control-block">
+            <div class="control-label">GUIDED PATHS <span class="sparkle">✳</span></div>
+            <button type="button" class="guide-card" data-guide="flood-path"><span class="guide-icon">≈</span><span><strong>The flood story</strong><small>Mesopotamia → Genesis</small></span><span class="guide-arrow">↗</span></button>
+            <button type="button" class="guide-card" data-guide="verona-path"><span class="guide-icon heart">♡</span><span><strong>Two lovers of Verona</strong><small>Da Porto → Shakespeare</small></span><span class="guide-arrow">↗</span></button>
+          </div>
+
+          <div class="sidebar-footer"><span class="footer-glyph">✳</span><span>Curated seed · v0.1<br />Evidence before inference</span></div>
+        </aside>
+
+        <section class="graph-column" aria-label="Graph exploration area">
+          <div class="graph-toolbar">
+            <div class="view-heading"><span id="viewKicker">RELATIONSHIP MAP</span><strong id="viewTitle">The evidence, in context</strong></div>
+            <div class="toolbar-actions">
+              <button class="toolbar-button" id="pathOpenButton"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="4" cy="15" r="2"></circle><circle cx="15" cy="4" r="2"></circle><circle cx="15" cy="15" r="2"></circle><path d="m5.5 13.5 8-8m-7 9.5h6.5"></path></svg>Find a path</button>
+              <div class="download-menu-wrap"><button class="toolbar-button export-button" id="exportMenuButton"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2.5v9m0 0 3.4-3.4M10 11.5 6.6 8.1M3 13.5v3h14v-3"></path></svg>Export <span class="chevron">⌄</span></button><div id="exportMenu" class="export-menu" hidden><button data-export="jsonld">JSON-LD</button><button data-export="csv">CSV</button></div></div>
+            </div>
+          </div>
+
+          <div class="canvas-shell" id="canvasShell">
+            <div class="canvas-annotation"><span class="annotation-dot"></span> Relationship view <span class="annotation-separator">/</span> <span id="resultCount">8 cited connections</span></div>
+            <div id="graphView" class="graph-view" role="tabpanel" aria-labelledby="graphTab">
+              <svg id="graphSvg" viewBox="0 0 1160 710" role="group" aria-label="Interactive graph of stories and their sources">
+                <defs>
+                  <marker id="arrowhead" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#8d8b7f" /></marker>
+                  <marker id="arrowhead-highlight" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#c6694d" /></marker>
+                </defs>
+                <g id="graphZoom"><g id="graphContent"></g></g>
+              </svg>
+              <div class="canvas-hint"><span>DRAG TO MOVE</span><span>SCROLL TO ZOOM</span></div>
+              <div class="zoom-controls"><button id="zoomIn" aria-label="Zoom in">+</button><button id="zoomOut" aria-label="Zoom out">−</button><button id="zoomReset" aria-label="Reset zoom">⌂</button></div>
+            </div>
+            <div id="timelineView" class="timeline-view" hidden role="tabpanel" aria-labelledby="timelineTab"></div>
+            <div id="listView" class="list-view" hidden role="tabpanel" aria-labelledby="listTab"></div>
+          </div>
+          <div class="legend-row" id="legendRow">
+            <span class="legend-title">READING THE MAP</span>
+            <span class="legend-item"><i class="legend-line solid"></i>Documented dependence</span>
+            <span class="legend-item"><i class="legend-line dashed"></i>Parallel / shared source</span>
+            <span class="legend-item"><i class="legend-node"></i>Tradition</span>
+            <span class="legend-item"><i class="legend-node story-node"></i>Story</span>
+            <span class="legend-item legend-tip">Select a node or line to inspect its record</span>
+          </div>
+        </section>
+
+        <aside class="inspector" id="inspector" aria-label="Selected item details" aria-live="polite">
+          <div id="inspectorContent"></div>
+        </aside>
+      </section>
+
+      <section class="method-note" id="method-note">
+        <span class="method-mark">✳</span>
+        <div><span class="eyebrow">A NOTE ON METHOD</span><p>Similarity is not proof of transmission. Lines show specific, cited claims; their type, confidence, and scholarly standing stay attached to the record.</p></div>
+        <a href="#sources" class="method-link">How to read this map <span>↗</span></a>
+      </section>
+
+      <footer class="page-footer" id="sources">
+        <a class="brand footer-brand" href="#"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span>RELIGION<br />ALMANAC</span></a>
+        <p>A living index of stories and the paths between them.<br /><span>Seed graph for exploration · scholarly review in progress.</span></p>
+        <div class="footer-links"><a href="#main">Back to top ↑</a><button id="footerSourcesButton">View citations</button></div>
+      </footer>
+    </main>
+
+    <dialog id="pathDialog" class="path-dialog" aria-labelledby="pathDialogTitle">
+      <form method="dialog" class="dialog-top"><div><span class="eyebrow">PATH EXPLORER</span><h2 id="pathDialogTitle">Trace a connection</h2></div><button class="icon-button dialog-close" value="cancel" aria-label="Close path explorer">×</button></form>
+      <div class="path-fields"><label>FROM<select id="pathFrom"></select></label><span class="path-arrow">→</span><label>TO<select id="pathTo"></select></label></div>
+      <button type="button" class="primary-button" id="findPathButton">Find the best-supported path <span>↗</span></button>
+      <div id="pathResults" class="path-results" aria-live="polite"><p class="empty-path">Choose two nodes to see a cited route through the graph.</p></div>
+    </dialog>
+
+    <dialog id="sourcesDialog" class="path-dialog citation-dialog" aria-labelledby="sourcesDialogTitle">
+      <form method="dialog" class="dialog-top"><div><span class="eyebrow">SOURCE REGISTER</span><h2 id="sourcesDialogTitle">References & licenses</h2></div><button class="icon-button dialog-close" value="cancel" aria-label="Close citation register">×</button></form>
+      <p class="register-note">This prototype stores metadata and citations only. It does not redistribute translations or source texts.</p>
+      <div id="sourceList" class="source-register-list"></div>
+    </dialog>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
