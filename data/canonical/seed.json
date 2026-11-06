@@ -1,0 +1,1357 @@
+{
+  "schema_version": "1.0.0",
+  "metadata": {
+    "dataset_id": "religion-almanac-seed",
+    "release": "prototype-01",
+    "year_convention": "historical_bce_ce",
+    "notes": "Migrated from the static prototype; records remain explicitly marked prototype."
+  },
+  "sources": [
+    {
+      "id": "ra:source:07d048b6bb4faab7975651fb",
+      "identity_key": "source|David M. Carr|Precursors to the Flood Narrative (Gen 6:5–9:17)|https://academic.oup.com/book/32142/chapter-abstract/268104460",
+      "title": "Precursors to the Flood Narrative (Gen 6:5–9:17)",
+      "author": "David M. Carr",
+      "container": "The Formation of Genesis 1–11: Biblical and Other Precursors",
+      "publisher": "Oxford University Press",
+      "year": "2020",
+      "url": "https://academic.oup.com/book/32142/chapter-abstract/268104460",
+      "license": "Citation metadata; linked source content remains with publisher",
+      "status": "prototype"
+    },
+    {
+      "id": "ra:source:1961e3786c075ce16abcca0b",
+      "identity_key": "source|William Shakespeare|Romeo and Juliet|https://www.folger.edu/explore/shakespeares-works/romeo-and-juliet/read/",
+      "title": "Romeo and Juliet",
+      "author": "William Shakespeare",
+      "container": "Folger Shakespeare Library",
+      "publisher": "Folger Shakespeare Library",
+      "year": "1597 (first quarto)",
+      "url": "https://www.folger.edu/explore/shakespeares-works/romeo-and-juliet/read/",
+      "license": "Public domain text; edition-specific rights may apply",
+      "status": "prototype"
+    },
+    {
+      "id": "ra:source:4b7865df0981c93a6551d4cb",
+      "identity_key": "source|Louise Geddes|The Metamorphosis of Pyramus and Thisbe and the Place of Appropriation on the Early Modern Stage|https://academic.oup.com/edinburgh-scholarship-online/book/30799/chapter-abstract/262409404",
+      "title": "The Metamorphosis of Pyramus and Thisbe and the Place of Appropriation on the Early Modern Stage",
+      "author": "Louise Geddes",
+      "container": "Ovid and Adaptation in Early Modern English Theatre, pp. 203–220",
+      "publisher": "Edinburgh University Press",
+      "year": "2019",
+      "url": "https://academic.oup.com/edinburgh-scholarship-online/book/30799/chapter-abstract/262409404",
+      "license": "Citation metadata; linked source content remains with publisher",
+      "status": "prototype"
+    },
+    {
+      "id": "ra:source:a212bb789ca91bde8267eeb6",
+      "identity_key": "source|Royal Shakespeare Company|Dates and Sources: Romeo and Juliet|https://www.rsc.org.uk/romeo-and-juliet/about-the-play/dates-and-sources",
+      "title": "Dates and Sources: Romeo and Juliet",
+      "author": "Royal Shakespeare Company",
+      "container": "Learning Zone",
+      "publisher": "Royal Shakespeare Company",
+      "year": "n.d.",
+      "url": "https://www.rsc.org.uk/romeo-and-juliet/about-the-play/dates-and-sources",
+      "license": "Citation metadata; linked source content remains with publisher",
+      "status": "prototype"
+    },
+    {
+      "id": "ra:source:a607e544f6d764371772e49d",
+      "identity_key": "source|Andrew R. George|The Babylonian Gilgamesh Epic|https://global.oup.com/academic/product/the-babylonian-gilgamesh-epic-9780198149227",
+      "title": "The Babylonian Gilgamesh Epic",
+      "author": "Andrew R. George",
+      "container": "The Babylonian Gilgamesh Epic: Introduction, Critical Edition and Cuneiform Texts",
+      "publisher": "Oxford University Press",
+      "year": "2003",
+      "url": "https://global.oup.com/academic/product/the-babylonian-gilgamesh-epic-9780198149227",
+      "license": "Citation metadata; linked source content remains with publisher",
+      "status": "prototype"
+    },
+    {
+      "id": "ra:source:c1cc752364c32747b394480b",
+      "identity_key": "source|Ovid|Metamorphoses, Book 4, lines 55–166|https://www.perseus.tufts.edu/hopper/text?doc=Ov.+Met.+4.55",
+      "title": "Metamorphoses, Book 4, lines 55–166",
+      "author": "Ovid",
+      "container": "Metamorphoses",
+      "publisher": "Primary text",
+      "year": "8 CE",
+      "url": "https://www.perseus.tufts.edu/hopper/text?doc=Ov.+Met.+4.55",
+      "license": "Public domain text; edition-specific rights may apply",
+      "status": "prototype"
+    },
+    {
+      "id": "ra:source:d9121f8bef82be7b7b4908b0",
+      "identity_key": "source|G. Blakemore Evans, ed.|Romeo and Juliet: Updated Edition|https://assets.cambridge.org/97805218/25467/excerpt/9780521825467_excerpt.pdf",
+      "title": "Romeo and Juliet: Updated Edition",
+      "author": "G. Blakemore Evans, ed.",
+      "container": "The New Cambridge Shakespeare",
+      "publisher": "Cambridge University Press",
+      "year": "2000",
+      "url": "https://assets.cambridge.org/97805218/25467/excerpt/9780521825467_excerpt.pdf",
+      "license": "Citation metadata; linked source content remains with publisher",
+      "status": "prototype"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "ra:node:07daaa2359c148bacc726f54",
+      "identity_key": "node|tradition|Early modern Europe",
+      "type": "tradition",
+      "label": "Early modern Europe",
+      "name_variants": [
+        {
+          "value": "Early modern",
+          "language": null,
+          "script": null,
+          "role": "alternate"
+        },
+        {
+          "value": "Renaissance literature",
+          "language": null,
+          "script": null,
+          "role": "alternate"
+        }
+      ],
+      "summary": "A connected print and performance culture in which stories moved among Italian, French, and English writers.",
+      "status": "prototype",
+      "parent_id": null,
+      "hierarchy_relation": null,
+      "hierarchy_evidence_source_ids": [],
+      "evidence_status": "unsourced",
+      "source_ids": [],
+      "languages": [
+        "Italian",
+        "French",
+        "English"
+      ],
+      "external_identifiers": [],
+      "external_links": [],
+      "date_assertions": [
+        {
+          "id": "ra:date:24aedeeb5214b5f2fc814a14",
+          "aspect": "historical_scope",
+          "start_year": 1450,
+          "end_year": 1650,
+          "year_convention": "historical_bce_ce",
+          "precision": "approximate",
+          "display_label": "c. 1450–1650",
+          "uncertainty_note": "A conventional period label; cultural boundaries are porous.",
+          "evidence_source_ids": []
+        }
+      ]
+    },
+    {
+      "id": "ra:node:1bc917c241ffa946f5da1fae",
+      "identity_key": "node|story|The flood of Atra-ḫasīs",
+      "type": "story",
+      "label": "The flood of Atra-ḫasīs",
+      "name_variants": [
+        {
+          "value": "Flood of Atrahasis",
+          "language": null,
+          "script": null,
+          "role": "alternate"
+        },
+        {
+          "value": "Atra-ḫasīs flood",
+          "language": null,
+          "script": null,
+          "role": "alternate"
+        }
+      ],
+      "summary": "The god Enki warns Atra-ḫasīs of a divinely sent flood; he builds a vessel and survives with life aboard.",
+      "status": "prototype",
+      "parent_id": "ra:node:1c3d6441cf5cf281fd9b458f",
+      "hierarchy_relation": "part_of",
+      "hierarchy_evidence_source_ids": [
+        "ra:source:07d048b6bb4faab7975651fb"
+      ],
+      "evidence_status": "sourced",
+      "source_ids": [
+        "ra:source:07d048b6bb4faab7975651fb"
+      ],
+      "languages": [
+        "Akkadian"
+      ],
+      "external_identifiers": [],
+      "external_links": [],
+      "date_assertions": [
+        {
+          "id": "ra:date:e00f772bb0e5fbacf8d4c56d",
+          "aspect": "narrative_attestation",
+          "start_year": -1900,
+          "end_year": -1600,
+          "year_convention": "historical_bce_ce",
+          "precision": "approximate",
+          "display_label": "c. 1900–1600 BCE",
+          "uncertainty_note": "Date follows the extant text tradition.",
+          "evidence_source_ids": [
+            "ra:source:07d048b6bb4faab7975651fb"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ra:node:1c3d6441cf5cf281fd9b458f",
+      "identity_key": "node|text|Atra-ḫasīs Epic",
+      "type": "text",
+      "label": "Atra-ḫasīs Epic",
+      "name_variants": [
+        {
+          "value": "Atrahasis",
+          "language": null,
+          "script": null,
+          "role": "alternate"
+        },
+        {
+          "value": "Atra-ḫasīs",
+          "language": null,
+          "script": null,
+          "role": "alternate"
+        },
+        {
+          "value": "Atra-Hasis",
+          "language": null,
+          "script": null,
+          "role": "alternate"
+        }
+      ],
+      "summary": "An Akkadian poem about human creation, divine conflict, and a flood that threatens humanity.",
+      "status": "prototype",
+      "parent_id": "ra:node:31d535440cdc136a3837333e",
+      "hierarchy_relation": "part_of",
+      "hierarchy_evidence_source_ids": [
+        "ra:source:07d048b6bb4faab7975651fb"
+      ],
+      "evidence_status": "unsourced",
+      "source_ids": [],
+      "languages": [
+        "Akkadian"
+      ],
+      "external_identifiers": [],
+      "external_links": [],
+      "date_assertions": [
+        {
+          "id": "ra:date:d80a767d3ed3bc4614b2739e",
+          "aspect": "textual_formation",
+          "start_year": -1900,
+          "end_year": -1600,
+          "year_convention": "historical_bce_ce",
+          "precision": "approximate",
+          "display_label": "c. 1900–1600 BCE",
+          "uncertainty_note": "The surviving Old Babylonian manuscript is dated to the early second millennium BCE.",
+          "evidence_source_ids": []
+        }
+      ]
+    },
+    {
+      "id": "ra:node:31d535440cdc136a3837333e",
+      "identity_key": "node|tradition|Mesopotamian traditions",
+      "type": "tradition",
+      "label": "Mesopotamian traditions",
+      "name_variants": [
+        {
+          "value": "Mesopotamian",
+          "language": null,
+          "script": null,
+          "role": "alternate"
+        },
+        {
+          "value": "Ancient Near East",
+          "language": null,
+          "script": null,
+          "role": "alternate"
+        }
+      ],
+      "summary": "A diverse set of religious and literary cultures whose texts circulated in Sumerian and Akkadian across several millennia.",
+      "status": "prototype",
+      "parent_id": null,
+      "hierarchy_relation": null,
+      "hierarchy_evidence_source_ids": [],
+      "evidence_status": "unsourced",
+      "source_ids": [],
+      "languages": [
+        "Sumerian",
+        "Akkadian"
+      ],
+      "external_identifiers": [],
+      "external_links": [],
+      "date_assertions": [
+        {
+          "id": "ra:date:c68a1418c7fc8f433e4f33eb",
+          "aspect": "historical_scope",
+          "start_year": -3000,
+          "end_year": -500,
+          "year_convention": "historical_bce_ce",
+          "precision": "approximate",
+          "display_label": "c. 3000–500 BCE",
+          "uncertainty_note": "A broad cultural span, not a single continuous institution.",
+          "evidence_source_ids": []
+        }
+      ]
+    },
+    {
+      "id": "ra:node:36cfa8e5fa28462fa1944d18",
+      "identity_key": "node|text|Histoires tragiques",
+      "type": "text",
+      "label": "Histoires tragiques",
+      "name_variants": [
+        {
+          "value": "Boaistuau",
+          "language": null,
+          "script": null,
+          "role": "alternate"
+        },
+        {
+          "value": "Histoire troisième de deux amants",
+          "language": null,
+          "script": null,
+          "role": "alternate"
+        }
+      ],
+      "summary": "Pierre Boaistuau adapted the Italian story into French for his collection of tragic histories.",
+      "status": "prototype",
+      "parent_id": "ra:node:07daaa2359c148bacc726f54",
+      "hierarchy_relation": "part_of",
+      "hierarchy_evidence_source_ids": [
+        "ra:source:d9121f8bef82be7b7b4908b0"
+      ],
+      "evidence_status": "unsourced",
+      "source_ids": [],
+      "languages": [
+        "French"
+      ],
+      "external_identifiers": [],
+      "external_links": [],
+      "date_assertions": [
+        {
+          "id": "ra:date:f413921a8c072258a30831f7",
+          "aspect": "textual_formation",
+          "start_year": 1559,
+          "end_year": 1559,
+          "year_convention": "historical_bce_ce",
+          "precision": "exact",
+          "display_label": "1559",
+          "uncertainty_note": "Published in the first volume of Histoires tragiques.",
+          "evidence_source_ids": []
+        }
+      ]
+    },
+    {
+      "id": "ra:node:4d4c82372a65f39b405fab6f",
+      "identity_key": "node|text|Genesis · בְּרֵאשִׁית",
+      "type": "text",
+      "label": "Genesis · בְּרֵאשִׁית",
+      "name_variants": [
+        {
+          "value": "Genesis",
+          "language": null,
+          "script": null,
+          "role": "alternate"
+        },
+        {
+          "value": "Bereshit",
+          "language": null,
+          "script": null,
+          "role": "alternate"
+        },
+        {
+          "value": "בְּרֵאשִׁית",
+          "language": null,
+          "script": null,
+          "role": "alternate"
+        },
+        {
+          "value": "Bereshith",
+          "language": null,
+          "script": null,
+          "role": "alternate"
+        }
+      ],
+      "summary": "The opening book of the Hebrew Bible, containing several traditions about origins, ancestors, and the world’s early history.",
+      "status": "prototype",
+      "parent_id": "ra:node:69ec3665f2987a22dfcd522c",
+      "hierarchy_relation": "part_of",
+      "hierarchy_evidence_source_ids": [
+        "ra:source:07d048b6bb4faab7975651fb"
+      ],
+      "evidence_status": "sourced",
+      "source_ids": [
+        "ra:source:07d048b6bb4faab7975651fb"
+      ],
+      "languages": [
+        "Biblical Hebrew"
+      ],
+      "external_identifiers": [
+        {
+          "namespace": "wikidata",
+          "value": "Q9184"
+        }
+      ],
+      "external_links": [
+        {
+          "label": "Read Genesis 6–9 at Sefaria",
+          "url": "https://www.sefaria.org/Genesis.6.5?lang=bi"
+        }
+      ],
+      "date_assertions": [
+        {
+          "id": "ra:date:40266ce04dc7743e8fc1ffc3",
+          "aspect": "textual_formation",
+          "start_year": -700,
+          "end_year": -400,
+          "year_convention": "historical_bce_ce",
+          "precision": "approximate",
+          "display_label": "First millennium BCE",
+          "uncertainty_note": "Composition and formation dates remain debated; this interval is approximate.",
+          "evidence_source_ids": [
+            "ra:source:07d048b6bb4faab7975651fb"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ra:node:518be0a7ef3189eda7b59dcd",
+      "identity_key": "node|text|Romeo e Giulietta",
+      "type": "text",
+      "label": "Romeo e Giulietta",
+      "name_variants": [
+        {
+          "value": "Matteo Bandello",
+          "language": null,
+          "script": null,
+          "role": "alternate"
+        },
+        {
+          "value": "Novella 9",
+          "language": null,
+          "script": null,
+          "role": "alternate"
+        },
+        {
+          "value": "La sfortunata morte",
+          "language": null,
+          "script": null,
+          "role": "alternate"
+        }
+      ],
+      "summary": "Bandello’s 1554 novella retells the lovers’ story in the Italian novella tradition.",
+      "status": "prototype",
+      "parent_id": "ra:node:07daaa2359c148bacc726f54",
+      "hierarchy_relation": "part_of",
+      "hierarchy_evidence_source_ids": [
+        "ra:source:d9121f8bef82be7b7b4908b0"
+      ],
+      "evidence_status": "unsourced",
+      "source_ids": [],
+      "languages": [
+        "Italian"
+      ],
+      "external_identifiers": [],
+      "external_links": [],
+      "date_assertions": [
+        {
+          "id": "ra:date:aff9aed6c69666234990ba50",
+          "aspect": "textual_formation",
+          "start_year": 1554,
+          "end_year": 1554,
+          "year_convention": "historical_bce_ce",
+          "precision": "exact",
+          "display_label": "1554",
+          "uncertainty_note": "Published in the second part of Bandello’s Novelle.",
+          "evidence_source_ids": []
+        }
+      ]
+    },
+    {
+      "id": "ra:node:6842dc23f881e981fe399bea",
+      "identity_key": "node|text|Metamorphoses",
+      "type": "text",
+      "label": "Metamorphoses",
+      "name_variants": [
+        {
+          "value": "Metamorphōseōn libri",
+          "language": null,
+          "script": null,
+          "role": "alternate"
+        },
+        {
+          "value": "Μεταμορφώσεις",
+          "language": null,
+          "script": null,
+          "role": "alternate"
+        },
+        {
+          "value": "Ovid’s Metamorphoses",
+          "language": null,
+          "script": null,
+          "role": "alternate"
+        }
+      ],
+      "summary": "Ovid’s Latin narrative poem gathers mythic stories of transformation, including Pyramus and Thisbe in Book 4.",
+      "status": "prototype",
+      "parent_id": "ra:node:fdc869a57f0ef30f7cf59086",
+      "hierarchy_relation": "part_of",
+      "hierarchy_evidence_source_ids": [
+        "ra:source:c1cc752364c32747b394480b"
+      ],
+      "evidence_status": "sourced",
+      "source_ids": [
+        "ra:source:c1cc752364c32747b394480b"
+      ],
+      "languages": [
+        "Latin"
+      ],
+      "external_identifiers": [
+        {
+          "namespace": "wikidata",
+          "value": "Q184742"
+        }
+      ],
+      "external_links": [
+        {
+          "label": "Book 4 at Perseus Digital Library",
+          "url": "https://www.perseus.tufts.edu/hopper/text?doc=Ov.+Met.+4.55"
+        }
+      ],
+      "date_assertions": [
+        {
+          "id": "ra:date:ae4633d5061183233fd50b03",
+          "aspect": "textual_formation",
+          "start_year": -1,
+          "end_year": 8,
+          "year_convention": "historical_bce_ce",
+          "precision": "approximate",
+          "display_label": "c. 1 BCE–8 CE",
+          "uncertainty_note": "Published in the early first century CE; composition spans the Augustan period.",
+          "evidence_source_ids": [
+            "ra:source:c1cc752364c32747b394480b"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ra:node:69ec3665f2987a22dfcd522c",
+      "identity_key": "node|tradition|Jewish traditions",
+      "type": "tradition",
+      "label": "Jewish traditions",
+      "name_variants": [
+        {
+          "value": "Jewish",
+          "language": null,
+          "script": null,
+          "role": "alternate"
+        },
+        {
+          "value": "Israelite",
+          "language": null,
+          "script": null,
+          "role": "alternate"
+        },
+        {
+          "value": "Hebrew",
+          "language": null,
+          "script": null,
+          "role": "alternate"
+        }
+      ],
+      "summary": "A living family of traditions rooted in ancient Israel and Judah, expressed through scripture, interpretation, practice, and community.",
+      "status": "prototype",
+      "parent_id": null,
+      "hierarchy_relation": null,
+      "hierarchy_evidence_source_ids": [],
+      "evidence_status": "unsourced",
+      "source_ids": [],
+      "languages": [
+        "Hebrew",
+        "Aramaic",
+        "many others"
+      ],
+      "external_identifiers": [],
+      "external_links": [],
+      "date_assertions": [
+        {
+          "id": "ra:date:7da2235e9cef3de55c550e96",
+          "aspect": "historical_scope",
+          "start_year": -1000,
+          "end_year": 2026,
+          "year_convention": "historical_bce_ce",
+          "precision": "approximate",
+          "display_label": "Ancient to present",
+          "uncertainty_note": "A long and internally diverse history.",
+          "evidence_source_ids": []
+        }
+      ]
+    },
+    {
+      "id": "ra:node:6a321f8f77129c981774c3af",
+      "identity_key": "node|work|Romeo and Juliet",
+      "type": "work",
+      "label": "Romeo and Juliet",
+      "name_variants": [
+        {
+          "value": "The Most Excellent and Lamentable Tragedy",
+          "language": null,
+          "script": null,
+          "role": "alternate"
+        },
+        {
+          "value": "Shakespeare’s Romeo and Juliet",
+          "language": null,
+          "script": null,
+          "role": "alternate"
+        }
+      ],
+      "summary": "Shakespeare’s tragedy transforms Brooke’s narrative poem for the stage. The play’s deeper analogies with Pyramus and Thisbe are visible without claiming a direct source relationship.",
+      "status": "prototype",
+      "parent_id": "ra:node:07daaa2359c148bacc726f54",
+      "hierarchy_relation": "part_of",
+      "hierarchy_evidence_source_ids": [
+        "ra:source:1961e3786c075ce16abcca0b"
+      ],
+      "evidence_status": "sourced",
+      "source_ids": [
+        "ra:source:1961e3786c075ce16abcca0b",
+        "ra:source:d9121f8bef82be7b7b4908b0"
+      ],
+      "languages": [
+        "English"
+      ],
+      "external_identifiers": [],
+      "external_links": [
+        {
+          "label": "Read at Folger Shakespeare Library",
+          "url": "https://www.folger.edu/explore/shakespeares-works/romeo-and-juliet/read/"
+        }
+      ],
+      "date_assertions": [
+        {
+          "id": "ra:date:a0a58c9db028dd69744d5911",
+          "aspect": "composition_or_publication",
+          "start_year": 1594,
+          "end_year": 1597,
+          "year_convention": "historical_bce_ce",
+          "precision": "approximate",
+          "display_label": "c. 1594–1597",
+          "uncertainty_note": "Composition date is debated; first quarto was published in 1597.",
+          "evidence_source_ids": [
+            "ra:source:1961e3786c075ce16abcca0b",
+            "ra:source:d9121f8bef82be7b7b4908b0"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ra:node:785a964ff7f630a02284370c",
+      "identity_key": "node|story|Pyramus and Thisbe",
+      "type": "story",
+      "label": "Pyramus and Thisbe",
+      "name_variants": [
+        {
+          "value": "Pyramus et Thisbe",
+          "language": null,
+          "script": null,
+          "role": "alternate"
+        }
+      ],
+      "summary": "Two young lovers communicate through a crack in a wall. A misunderstanding and a bloodied veil lead to their deaths beneath a mulberry tree.",
+      "status": "prototype",
+      "parent_id": "ra:node:6842dc23f881e981fe399bea",
+      "hierarchy_relation": "part_of",
+      "hierarchy_evidence_source_ids": [
+        "ra:source:c1cc752364c32747b394480b"
+      ],
+      "evidence_status": "sourced",
+      "source_ids": [
+        "ra:source:c1cc752364c32747b394480b",
+        "ra:source:d9121f8bef82be7b7b4908b0"
+      ],
+      "languages": [
+        "Latin"
+      ],
+      "external_identifiers": [],
+      "external_links": [],
+      "date_assertions": [
+        {
+          "id": "ra:date:d4194497c8edeb8dc6415ae6",
+          "aspect": "narrative_attestation",
+          "start_year": -1,
+          "end_year": 8,
+          "year_convention": "historical_bce_ce",
+          "precision": "approximate",
+          "display_label": "Metamorphoses 4.55–166",
+          "uncertainty_note": "Ovid’s surviving version dates to the early first century CE; earlier sources may have existed.",
+          "evidence_source_ids": [
+            "ra:source:c1cc752364c32747b394480b",
+            "ra:source:d9121f8bef82be7b7b4908b0"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ra:node:843965f1d2e2f0c3e175453e",
+      "identity_key": "node|work|A Midsummer Night’s Dream",
+      "type": "work",
+      "label": "A Midsummer Night’s Dream",
+      "name_variants": [
+        {
+          "value": "Midsummer Night’s Dream",
+          "language": null,
+          "script": null,
+          "role": "alternate"
+        },
+        {
+          "value": "Dream",
+          "language": null,
+          "script": null,
+          "role": "alternate"
+        }
+      ],
+      "summary": "Shakespeare stages a comic performance of Pyramus and Thisbe, making the classical tale part of the play’s theatrical world.",
+      "status": "prototype",
+      "parent_id": "ra:node:fdc869a57f0ef30f7cf59086",
+      "hierarchy_relation": "part_of",
+      "hierarchy_evidence_source_ids": [
+        "ra:source:d9121f8bef82be7b7b4908b0"
+      ],
+      "evidence_status": "sourced",
+      "source_ids": [
+        "ra:source:4b7865df0981c93a6551d4cb"
+      ],
+      "languages": [
+        "English"
+      ],
+      "external_identifiers": [],
+      "external_links": [],
+      "date_assertions": [
+        {
+          "id": "ra:date:71ec729e036697de3417de58",
+          "aspect": "composition_or_publication",
+          "start_year": 1594,
+          "end_year": 1596,
+          "year_convention": "historical_bce_ce",
+          "precision": "approximate",
+          "display_label": "c. 1594–1596",
+          "uncertainty_note": "Composition date is approximate.",
+          "evidence_source_ids": [
+            "ra:source:4b7865df0981c93a6551d4cb"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ra:node:ad641f7f99fd572c03cd2972",
+      "identity_key": "node|story|Uta-napišti’s flood",
+      "type": "story",
+      "label": "Uta-napišti’s flood",
+      "name_variants": [
+        {
+          "value": "Utnapishtim flood",
+          "language": null,
+          "script": null,
+          "role": "alternate"
+        },
+        {
+          "value": "Flood of Gilgamesh",
+          "language": null,
+          "script": null,
+          "role": "alternate"
+        },
+        {
+          "value": "Uta-napišti",
+          "language": null,
+          "script": null,
+          "role": "alternate"
+        }
+      ],
+      "summary": "On Tablet XI, Uta-napišti recounts how he survived the great flood and received immortality.",
+      "status": "prototype",
+      "parent_id": "ra:node:e5fac6e07d065a575d444d99",
+      "hierarchy_relation": "part_of",
+      "hierarchy_evidence_source_ids": [
+        "ra:source:a607e544f6d764371772e49d"
+      ],
+      "evidence_status": "sourced",
+      "source_ids": [
+        "ra:source:a607e544f6d764371772e49d"
+      ],
+      "languages": [
+        "Akkadian"
+      ],
+      "external_identifiers": [],
+      "external_links": [],
+      "date_assertions": [
+        {
+          "id": "ra:date:67e66b0231310adbd89255ce",
+          "aspect": "narrative_attestation",
+          "start_year": -1300,
+          "end_year": -1000,
+          "year_convention": "historical_bce_ce",
+          "precision": "approximate",
+          "display_label": "Tablet XI · c. 1300–1000 BCE",
+          "uncertainty_note": "Date follows the Standard Babylonian poem.",
+          "evidence_source_ids": [
+            "ra:source:a607e544f6d764371772e49d"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ra:node:c06c33aaf22addf5c6184700",
+      "identity_key": "node|story|Noah and the flood",
+      "type": "story",
+      "label": "Noah and the flood",
+      "name_variants": [
+        {
+          "value": "Noah’s flood",
+          "language": null,
+          "script": null,
+          "role": "alternate"
+        },
+        {
+          "value": "מבול נח",
+          "language": null,
+          "script": null,
+          "role": "alternate"
+        },
+        {
+          "value": "Noah",
+          "language": null,
+          "script": null,
+          "role": "alternate"
+        }
+      ],
+      "summary": "Genesis 6–9 describes a flood, Noah’s ark, the survival of life, and a covenant marked by the rainbow.",
+      "status": "prototype",
+      "parent_id": "ra:node:4d4c82372a65f39b405fab6f",
+      "hierarchy_relation": "part_of",
+      "hierarchy_evidence_source_ids": [
+        "ra:source:07d048b6bb4faab7975651fb"
+      ],
+      "evidence_status": "sourced",
+      "source_ids": [
+        "ra:source:07d048b6bb4faab7975651fb"
+      ],
+      "languages": [
+        "Biblical Hebrew"
+      ],
+      "external_identifiers": [],
+      "external_links": [],
+      "date_assertions": [
+        {
+          "id": "ra:date:677c825e376541a8df841cd1",
+          "aspect": "narrative_attestation",
+          "start_year": -700,
+          "end_year": -400,
+          "year_convention": "historical_bce_ce",
+          "precision": "approximate",
+          "display_label": "Genesis 6–9 · first millennium BCE",
+          "uncertainty_note": "The narrative’s literary formation is debated.",
+          "evidence_source_ids": [
+            "ra:source:07d048b6bb4faab7975651fb"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ra:node:c4de2c905f7ac39511d0d8e3",
+      "identity_key": "node|text|Giulietta e Romeo",
+      "type": "text",
+      "label": "Giulietta e Romeo",
+      "name_variants": [
+        {
+          "value": "Historia novellamente ritrovata",
+          "language": null,
+          "script": null,
+          "role": "alternate"
+        },
+        {
+          "value": "Da Porto",
+          "language": null,
+          "script": null,
+          "role": "alternate"
+        }
+      ],
+      "summary": "Luigi da Porto’s Italian novella is the earliest known version to set the story in Verona and name the lovers Romeo and Giulietta.",
+      "status": "prototype",
+      "parent_id": "ra:node:07daaa2359c148bacc726f54",
+      "hierarchy_relation": "part_of",
+      "hierarchy_evidence_source_ids": [
+        "ra:source:d9121f8bef82be7b7b4908b0"
+      ],
+      "evidence_status": "unsourced",
+      "source_ids": [],
+      "languages": [
+        "Italian"
+      ],
+      "external_identifiers": [],
+      "external_links": [],
+      "date_assertions": [
+        {
+          "id": "ra:date:aebde563982e29ae7a04a8f5",
+          "aspect": "textual_formation",
+          "start_year": 1524,
+          "end_year": 1535,
+          "year_convention": "historical_bce_ce",
+          "precision": "approximate",
+          "display_label": "c. 1524–1535",
+          "uncertainty_note": "Written around 1524; published by 1535.",
+          "evidence_source_ids": []
+        }
+      ]
+    },
+    {
+      "id": "ra:node:dee6fb10521e95b452af7086",
+      "identity_key": "node|text|Romeus and Juliet",
+      "type": "text",
+      "label": "Romeus and Juliet",
+      "name_variants": [
+        {
+          "value": "The Tragical History of Romeus and Juliet",
+          "language": null,
+          "script": null,
+          "role": "alternate"
+        },
+        {
+          "value": "Arthur Brooke",
+          "language": null,
+          "script": null,
+          "role": "alternate"
+        },
+        {
+          "value": "Romeus",
+          "language": null,
+          "script": null,
+          "role": "alternate"
+        }
+      ],
+      "summary": "Arthur Brooke’s English narrative poem reshapes the French version and became Shakespeare’s principal source for the play.",
+      "status": "prototype",
+      "parent_id": "ra:node:07daaa2359c148bacc726f54",
+      "hierarchy_relation": "part_of",
+      "hierarchy_evidence_source_ids": [
+        "ra:source:d9121f8bef82be7b7b4908b0"
+      ],
+      "evidence_status": "unsourced",
+      "source_ids": [],
+      "languages": [
+        "English"
+      ],
+      "external_identifiers": [],
+      "external_links": [],
+      "date_assertions": [
+        {
+          "id": "ra:date:3fa3da64e268d58b766c83b9",
+          "aspect": "textual_formation",
+          "start_year": 1562,
+          "end_year": 1562,
+          "year_convention": "historical_bce_ce",
+          "precision": "exact",
+          "display_label": "1562",
+          "uncertainty_note": "First published in 1562.",
+          "evidence_source_ids": []
+        }
+      ]
+    },
+    {
+      "id": "ra:node:e5fac6e07d065a575d444d99",
+      "identity_key": "node|text|Epic of Gilgamesh",
+      "type": "text",
+      "label": "Epic of Gilgamesh",
+      "name_variants": [
+        {
+          "value": "Ša naqba īmuru",
+          "language": null,
+          "script": null,
+          "role": "alternate"
+        },
+        {
+          "value": "Epic of Gilgameš",
+          "language": null,
+          "script": null,
+          "role": "alternate"
+        }
+      ],
+      "summary": "The Standard Babylonian epic follows Gilgamesh’s search for lasting life, including his encounter with the flood survivor Uta-napišti.",
+      "status": "prototype",
+      "parent_id": "ra:node:31d535440cdc136a3837333e",
+      "hierarchy_relation": "part_of",
+      "hierarchy_evidence_source_ids": [
+        "ra:source:a607e544f6d764371772e49d"
+      ],
+      "evidence_status": "sourced",
+      "source_ids": [
+        "ra:source:a607e544f6d764371772e49d"
+      ],
+      "languages": [
+        "Akkadian",
+        "Sumerian"
+      ],
+      "external_identifiers": [
+        {
+          "namespace": "wikidata",
+          "value": "Q8272"
+        }
+      ],
+      "external_links": [],
+      "date_assertions": [
+        {
+          "id": "ra:date:c9948799608079bd1d328138",
+          "aspect": "textual_formation",
+          "start_year": -1300,
+          "end_year": -1000,
+          "year_convention": "historical_bce_ce",
+          "precision": "approximate",
+          "display_label": "c. 1300–1000 BCE",
+          "uncertainty_note": "The Standard Babylonian version took shape in the late second millennium BCE; earlier forms also survive.",
+          "evidence_source_ids": [
+            "ra:source:a607e544f6d764371772e49d"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ra:node:fdc869a57f0ef30f7cf59086",
+      "identity_key": "node|tradition|Greco-Roman literature",
+      "type": "tradition",
+      "label": "Greco-Roman literature",
+      "name_variants": [
+        {
+          "value": "Classical",
+          "language": null,
+          "script": null,
+          "role": "alternate"
+        },
+        {
+          "value": "Greek and Roman literature",
+          "language": null,
+          "script": null,
+          "role": "alternate"
+        },
+        {
+          "value": "Greco-Roman",
+          "language": null,
+          "script": null,
+          "role": "alternate"
+        }
+      ],
+      "summary": "A multilingual literary world whose myths and poems were retold, translated, and adapted across the Mediterranean.",
+      "status": "prototype",
+      "parent_id": null,
+      "hierarchy_relation": null,
+      "hierarchy_evidence_source_ids": [],
+      "evidence_status": "unsourced",
+      "source_ids": [],
+      "languages": [
+        "Ancient Greek",
+        "Latin"
+      ],
+      "external_identifiers": [],
+      "external_links": [],
+      "date_assertions": [
+        {
+          "id": "ra:date:57d768584b7b6940f38ff077",
+          "aspect": "historical_scope",
+          "start_year": -800,
+          "end_year": 500,
+          "year_convention": "historical_bce_ce",
+          "precision": "approximate",
+          "display_label": "c. 800 BCE–500 CE",
+          "uncertainty_note": "A broad period convention; the works and traditions span different communities.",
+          "evidence_source_ids": []
+        }
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "ra:claim:00f2c400dc29181226849f42",
+      "identity_key": "claim|ra:node:ad641f7f99fd572c03cd2972|ra:node:c06c33aaf22addf5c6184700|shared_source|e-gil-noah",
+      "subject_id": "ra:node:ad641f7f99fd572c03cd2972",
+      "object_id": "ra:node:c06c33aaf22addf5c6184700",
+      "relation_type": "shared_source",
+      "direction": "probable",
+      "confidence": 4,
+      "consensus": "majority",
+      "rationale": "Genesis’s flood traditions are modeled in part on earlier Mesopotamian traditions, including the flood account in Gilgamesh Tablet XI.",
+      "date_label": "first millennium BCE",
+      "date_assertions": [
+        {
+          "id": "ra:date:f552475831f4d72366aed73a",
+          "aspect": "relationship_period",
+          "start_year": -1000,
+          "end_year": -1,
+          "precision": "period",
+          "uncertainty_note": "A broad historical period; the year convention has no year zero.",
+          "year_convention": "historical_bce_ce",
+          "display_label": "first millennium BCE",
+          "evidence_source_ids": [
+            "ra:source:07d048b6bb4faab7975651fb"
+          ]
+        }
+      ],
+      "inferred": false,
+      "status": "prototype",
+      "evidence_status": "sourced",
+      "evidence_source_ids": [
+        "ra:source:07d048b6bb4faab7975651fb"
+      ]
+    },
+    {
+      "id": "ra:claim:5579b7a6602a96527c135fa2",
+      "identity_key": "claim|ra:node:c4de2c905f7ac39511d0d8e3|ra:node:518be0a7ef3189eda7b59dcd|direct_textual_dependence|e-da-bandello",
+      "subject_id": "ra:node:c4de2c905f7ac39511d0d8e3",
+      "object_id": "ra:node:518be0a7ef3189eda7b59dcd",
+      "relation_type": "direct_textual_dependence",
+      "direction": "certain",
+      "confidence": 4,
+      "consensus": "consensus",
+      "rationale": "Bandello’s novella follows da Porto’s earlier Italian version and carries forward its Verona setting and named lovers.",
+      "date_label": "1554",
+      "date_assertions": [
+        {
+          "id": "ra:date:2055cde0e951122d646ff5d6",
+          "aspect": "relationship_period",
+          "start_year": 1554,
+          "end_year": 1554,
+          "precision": "exact",
+          "uncertainty_note": null,
+          "year_convention": "historical_bce_ce",
+          "display_label": "1554",
+          "evidence_source_ids": [
+            "ra:source:d9121f8bef82be7b7b4908b0"
+          ]
+        }
+      ],
+      "inferred": false,
+      "status": "prototype",
+      "evidence_status": "sourced",
+      "evidence_source_ids": [
+        "ra:source:d9121f8bef82be7b7b4908b0"
+      ]
+    },
+    {
+      "id": "ra:claim:59783e8ab884f67757d26a30",
+      "identity_key": "claim|ra:node:518be0a7ef3189eda7b59dcd|ra:node:36cfa8e5fa28462fa1944d18|direct_textual_dependence|e-bandello-boai",
+      "subject_id": "ra:node:518be0a7ef3189eda7b59dcd",
+      "object_id": "ra:node:36cfa8e5fa28462fa1944d18",
+      "relation_type": "direct_textual_dependence",
+      "direction": "certain",
+      "confidence": 5,
+      "consensus": "consensus",
+      "rationale": "Boaistuau’s French version is based primarily on Bandello’s Italian novella.",
+      "date_label": "1559",
+      "date_assertions": [
+        {
+          "id": "ra:date:a6a5cbcfbcb8f18861f86824",
+          "aspect": "relationship_period",
+          "start_year": 1559,
+          "end_year": 1559,
+          "precision": "exact",
+          "uncertainty_note": null,
+          "year_convention": "historical_bce_ce",
+          "display_label": "1559",
+          "evidence_source_ids": [
+            "ra:source:d9121f8bef82be7b7b4908b0"
+          ]
+        }
+      ],
+      "inferred": false,
+      "status": "prototype",
+      "evidence_status": "sourced",
+      "evidence_source_ids": [
+        "ra:source:d9121f8bef82be7b7b4908b0"
+      ]
+    },
+    {
+      "id": "ra:claim:722a6de5b8629f174832dc70",
+      "identity_key": "claim|ra:node:dee6fb10521e95b452af7086|ra:node:6a321f8f77129c981774c3af|direct_textual_dependence|e-brooke-rj",
+      "subject_id": "ra:node:dee6fb10521e95b452af7086",
+      "object_id": "ra:node:6a321f8f77129c981774c3af",
+      "relation_type": "direct_textual_dependence",
+      "direction": "certain",
+      "confidence": 5,
+      "consensus": "consensus",
+      "rationale": "Brooke’s poem is Shakespeare’s principal and immediate source for the play.",
+      "date_label": "c. 1594–1597",
+      "date_assertions": [
+        {
+          "id": "ra:date:2b77417f51bd78126b9fbd74",
+          "aspect": "relationship_period",
+          "start_year": 1594,
+          "end_year": 1597,
+          "precision": "approximate",
+          "uncertainty_note": "The source label gives an approximate interval.",
+          "year_convention": "historical_bce_ce",
+          "display_label": "c. 1594–1597",
+          "evidence_source_ids": [
+            "ra:source:d9121f8bef82be7b7b4908b0",
+            "ra:source:a212bb789ca91bde8267eeb6"
+          ]
+        }
+      ],
+      "inferred": false,
+      "status": "prototype",
+      "evidence_status": "sourced",
+      "evidence_source_ids": [
+        "ra:source:d9121f8bef82be7b7b4908b0",
+        "ra:source:a212bb789ca91bde8267eeb6"
+      ]
+    },
+    {
+      "id": "ra:claim:ccf917611f2c32c6fc721403",
+      "identity_key": "claim|ra:node:785a964ff7f630a02284370c|ra:node:843965f1d2e2f0c3e175453e|direct_textual_dependence|e-pyr-midsummer",
+      "subject_id": "ra:node:785a964ff7f630a02284370c",
+      "object_id": "ra:node:843965f1d2e2f0c3e175453e",
+      "relation_type": "direct_textual_dependence",
+      "direction": "certain",
+      "confidence": 5,
+      "consensus": "consensus",
+      "rationale": "Shakespeare stages the Pyramus and Thisbe story as a play within A Midsummer Night’s Dream.",
+      "date_label": "late 16th century",
+      "date_assertions": [
+        {
+          "id": "ra:date:3a2b859e197d4180de39be20",
+          "aspect": "relationship_period",
+          "start_year": null,
+          "end_year": null,
+          "precision": "unknown",
+          "uncertainty_note": "Prototype display label retained; numeric bounds need editorial review.",
+          "year_convention": "historical_bce_ce",
+          "display_label": "late 16th century",
+          "evidence_source_ids": [
+            "ra:source:4b7865df0981c93a6551d4cb"
+          ]
+        }
+      ],
+      "inferred": false,
+      "status": "prototype",
+      "evidence_status": "sourced",
+      "evidence_source_ids": [
+        "ra:source:4b7865df0981c93a6551d4cb"
+      ]
+    },
+    {
+      "id": "ra:claim:cfa6708af76fc8792012f815",
+      "identity_key": "claim|ra:node:36cfa8e5fa28462fa1944d18|ra:node:dee6fb10521e95b452af7086|direct_textual_dependence|e-boai-brooke",
+      "subject_id": "ra:node:36cfa8e5fa28462fa1944d18",
+      "object_id": "ra:node:dee6fb10521e95b452af7086",
+      "relation_type": "direct_textual_dependence",
+      "direction": "certain",
+      "confidence": 5,
+      "consensus": "consensus",
+      "rationale": "Brooke’s English narrative poem uses Boaistuau’s French version as its source.",
+      "date_label": "1562",
+      "date_assertions": [
+        {
+          "id": "ra:date:3a406e9f503b35c5dfb18caa",
+          "aspect": "relationship_period",
+          "start_year": 1562,
+          "end_year": 1562,
+          "precision": "exact",
+          "uncertainty_note": null,
+          "year_convention": "historical_bce_ce",
+          "display_label": "1562",
+          "evidence_source_ids": [
+            "ra:source:d9121f8bef82be7b7b4908b0",
+            "ra:source:a212bb789ca91bde8267eeb6"
+          ]
+        }
+      ],
+      "inferred": false,
+      "status": "prototype",
+      "evidence_status": "sourced",
+      "evidence_source_ids": [
+        "ra:source:d9121f8bef82be7b7b4908b0",
+        "ra:source:a212bb789ca91bde8267eeb6"
+      ]
+    },
+    {
+      "id": "ra:claim:e33da5a69e63496a12b62eb7",
+      "identity_key": "claim|ra:node:785a964ff7f630a02284370c|ra:node:6a321f8f77129c981774c3af|motif_parallel|e-pyr-rj",
+      "subject_id": "ra:node:785a964ff7f630a02284370c",
+      "object_id": "ra:node:6a321f8f77129c981774c3af",
+      "relation_type": "motif_parallel",
+      "direction": "unknown",
+      "confidence": 3,
+      "consensus": "majority",
+      "rationale": "The lovers’ separation, miscommunication, and deaths invite comparison. The parallel does not establish that Ovid was a direct source for Shakespeare’s plot.",
+      "date_label": null,
+      "date_assertions": [],
+      "inferred": false,
+      "status": "prototype",
+      "evidence_status": "sourced",
+      "evidence_source_ids": [
+        "ra:source:d9121f8bef82be7b7b4908b0"
+      ]
+    },
+    {
+      "id": "ra:claim:f60c6028c479532cf909acbd",
+      "identity_key": "claim|ra:node:1bc917c241ffa946f5da1fae|ra:node:c06c33aaf22addf5c6184700|shared_source|e-atra-noah",
+      "subject_id": "ra:node:1bc917c241ffa946f5da1fae",
+      "object_id": "ra:node:c06c33aaf22addf5c6184700",
+      "relation_type": "shared_source",
+      "direction": "probable",
+      "confidence": 4,
+      "consensus": "majority",
+      "rationale": "Genesis’s flood traditions are modeled on earlier Mesopotamian flood traditions, including Atra-ḫasīs. This edge describes a scholarly source relationship, not an identical account.",
+      "date_label": "first millennium BCE",
+      "date_assertions": [
+        {
+          "id": "ra:date:061e1641108f57ae5ff75c3c",
+          "aspect": "relationship_period",
+          "start_year": -1000,
+          "end_year": -1,
+          "precision": "period",
+          "uncertainty_note": "A broad historical period; the year convention has no year zero.",
+          "year_convention": "historical_bce_ce",
+          "display_label": "first millennium BCE",
+          "evidence_source_ids": [
+            "ra:source:07d048b6bb4faab7975651fb"
+          ]
+        }
+      ],
+      "inferred": false,
+      "status": "prototype",
+      "evidence_status": "sourced",
+      "evidence_source_ids": [
+        "ra:source:07d048b6bb4faab7975651fb"
+      ]
+    }
+  ],
+  "review_events": [],
+  "guided_paths": [
+    {
+      "id": "flood-path",
+      "title": "The flood story",
+      "subtitle": "Mesopotamia → Genesis",
+      "nodes": [
+        "ra:node:1bc917c241ffa946f5da1fae",
+        "ra:node:c06c33aaf22addf5c6184700"
+      ],
+      "edges": [
+        "ra:claim:f60c6028c479532cf909acbd"
+      ],
+      "introduction": "Compare the literary relationship scholars trace between Mesopotamian flood traditions and the Genesis account. The link is framed as influence with uncertainty attached, not as a claim that the stories are interchangeable."
+    },
+    {
+      "id": "verona-path",
+      "title": "Two lovers of Verona",
+      "subtitle": "Da Porto → Shakespeare",
+      "nodes": [
+        "ra:node:c4de2c905f7ac39511d0d8e3",
+        "ra:node:518be0a7ef3189eda7b59dcd",
+        "ra:node:36cfa8e5fa28462fa1944d18",
+        "ra:node:dee6fb10521e95b452af7086",
+        "ra:node:6a321f8f77129c981774c3af"
+      ],
+      "edges": [
+        "ra:claim:5579b7a6602a96527c135fa2",
+        "ra:claim:59783e8ab884f67757d26a30",
+        "ra:claim:cfa6708af76fc8792012f815",
+        "ra:claim:722a6de5b8629f174832dc70"
+      ],
+      "introduction": "Follow a documented chain of retellings across Italian, French, and English. Each hop has its own evidence; the sequence makes the adaptation history visible."
+    }
+  ]
+}

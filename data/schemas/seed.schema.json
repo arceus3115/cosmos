@@ -1,0 +1,162 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://religion-almanac.example/schemas/seed-1.0.0.json",
+  "title": "Religion Almanac canonical seed",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "metadata", "sources", "nodes", "claims", "review_events", "guided_paths"],
+  "properties": {
+    "schema_version": { "const": "1.0.0" },
+    "metadata": {
+      "type": "object",
+      "required": ["dataset_id", "release", "year_convention"],
+      "properties": {
+        "dataset_id": { "type": "string", "minLength": 1 },
+        "release": { "type": "string", "minLength": 1 },
+        "year_convention": { "const": "historical_bce_ce" },
+        "notes": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "sources": { "type": "array", "items": { "$ref": "#/$defs/source" } },
+    "nodes": { "type": "array", "items": { "$ref": "#/$defs/node" } },
+    "claims": { "type": "array", "items": { "$ref": "#/$defs/claim" } },
+    "review_events": { "type": "array", "items": { "$ref": "#/$defs/reviewEvent" } },
+    "guided_paths": { "type": "array", "items": { "$ref": "#/$defs/guidedPath" } }
+  },
+  "$defs": {
+    "sourceId": { "type": "string", "pattern": "^ra:source:[0-9a-f]{24}$" },
+    "nodeId": { "type": "string", "pattern": "^ra:node:[0-9a-f]{24}$" },
+    "claimId": { "type": "string", "pattern": "^ra:claim:[0-9a-f]{24}$" },
+    "reviewId": { "type": "string", "pattern": "^ra:review:[0-9a-f]{24}$" },
+    "year": { "oneOf": [{ "type": "integer", "not": { "const": 0 } }, { "type": "null" }] },
+    "source": {
+      "type": "object",
+      "required": ["id", "identity_key", "title", "license", "status"],
+      "properties": {
+        "id": { "$ref": "#/$defs/sourceId" },
+        "identity_key": { "type": "string", "minLength": 1 },
+        "title": { "type": "string", "minLength": 1 },
+        "author": { "type": ["string", "null"] },
+        "container": { "type": ["string", "null"] },
+        "publisher": { "type": ["string", "null"] },
+        "year": { "type": ["string", "null"] },
+        "url": { "type": ["string", "null"], "format": "uri" },
+        "license": { "type": "string", "minLength": 1 },
+        "status": { "enum": ["draft", "reviewed", "published", "prototype"] }
+      },
+      "additionalProperties": false
+    },
+    "nameVariant": {
+      "type": "object",
+      "required": ["value", "language", "script", "role"],
+      "properties": {
+        "value": { "type": "string", "minLength": 1 },
+        "language": { "type": ["string", "null"] },
+        "script": { "type": ["string", "null"] },
+        "role": { "enum": ["alternate", "transliteration", "historical", "preferred"] }
+      },
+      "additionalProperties": false
+    },
+    "dateAssertion": {
+      "type": "object",
+      "required": ["id", "aspect", "start_year", "end_year", "year_convention", "precision", "display_label", "uncertainty_note", "evidence_source_ids"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^ra:date:[0-9a-f]{24}$" },
+        "aspect": { "type": "string", "minLength": 1 },
+        "start_year": { "$ref": "#/$defs/year" },
+        "end_year": { "$ref": "#/$defs/year" },
+        "year_convention": { "const": "historical_bce_ce" },
+        "precision": { "enum": ["exact", "approximate", "century", "period", "unknown"] },
+        "display_label": { "type": ["string", "null"] },
+        "uncertainty_note": { "type": ["string", "null"] },
+        "evidence_source_ids": { "type": "array", "items": { "$ref": "#/$defs/sourceId" }, "uniqueItems": true }
+      },
+      "additionalProperties": false
+    },
+    "node": {
+      "type": "object",
+      "required": ["id", "identity_key", "type", "label", "name_variants", "summary", "status", "parent_id", "hierarchy_relation", "hierarchy_evidence_source_ids", "evidence_status", "source_ids", "languages", "external_identifiers", "external_links", "date_assertions"],
+      "properties": {
+        "id": { "$ref": "#/$defs/nodeId" },
+        "identity_key": { "type": "string", "minLength": 1 },
+        "type": { "enum": ["tradition", "text", "story", "work", "motif", "figure", "place", "period"] },
+        "label": { "type": "string", "minLength": 1 },
+        "name_variants": { "type": "array", "items": { "$ref": "#/$defs/nameVariant" } },
+        "summary": { "type": ["string", "null"], "maxLength": 1000 },
+        "status": { "enum": ["draft", "reviewed", "published", "prototype"] },
+        "parent_id": { "oneOf": [{ "$ref": "#/$defs/nodeId" }, { "type": "null" }] },
+        "hierarchy_relation": { "oneOf": [{ "const": "part_of" }, { "type": "null" }] },
+        "hierarchy_evidence_source_ids": { "type": "array", "items": { "$ref": "#/$defs/sourceId" }, "uniqueItems": true },
+        "evidence_status": { "enum": ["sourced", "unsourced"] },
+        "source_ids": { "type": "array", "items": { "$ref": "#/$defs/sourceId" }, "uniqueItems": true },
+        "languages": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+        "external_identifiers": {
+          "type": "array", "items": { "type": "object", "required": ["namespace", "value"], "properties": { "namespace": { "type": "string" }, "value": { "type": "string" } }, "additionalProperties": false }
+        },
+        "external_links": {
+          "type": "array", "items": { "type": "object", "required": ["label", "url"], "properties": { "label": { "type": "string" }, "url": { "type": "string", "format": "uri" } }, "additionalProperties": false }
+        },
+        "date_assertions": { "type": "array", "items": { "$ref": "#/$defs/dateAssertion" } }
+      },
+      "additionalProperties": false,
+      "allOf": [
+        { "if": { "properties": { "parent_id": { "type": "null" } } }, "then": { "properties": { "hierarchy_relation": { "type": "null" } } } },
+        { "if": { "properties": { "status": { "const": "published" } } }, "then": { "properties": { "evidence_status": { "const": "sourced" }, "source_ids": { "minItems": 1 } } } }
+      ]
+    },
+    "claim": {
+      "type": "object",
+      "required": ["id", "identity_key", "subject_id", "object_id", "relation_type", "direction", "confidence", "consensus", "rationale", "date_label", "date_assertions", "inferred", "status", "evidence_status", "evidence_source_ids"],
+      "properties": {
+        "id": { "$ref": "#/$defs/claimId" },
+        "identity_key": { "type": "string", "minLength": 1 },
+        "subject_id": { "$ref": "#/$defs/nodeId" },
+        "object_id": { "$ref": "#/$defs/nodeId" },
+        "relation_type": { "enum": ["direct_textual_dependence", "shared_source", "motif_parallel", "oral_diffusion", "polemical_adaptation", "reception_commentary", "tradition_lineage"] },
+        "direction": { "enum": ["certain", "probable", "unknown"] },
+        "confidence": { "type": ["integer", "null"], "minimum": 1, "maximum": 5 },
+        "consensus": { "enum": ["consensus", "majority", "contested", "fringe", null] },
+        "rationale": { "type": ["string", "null"] },
+        "date_label": { "type": ["string", "null"] },
+        "date_assertions": { "type": "array", "items": { "$ref": "#/$defs/dateAssertion" } },
+        "inferred": { "type": "boolean" },
+        "status": { "enum": ["draft", "reviewed", "published", "prototype"] },
+        "evidence_status": { "enum": ["sourced", "unsourced"] },
+        "evidence_source_ids": { "type": "array", "items": { "$ref": "#/$defs/sourceId" }, "uniqueItems": true }
+      },
+      "additionalProperties": false,
+      "allOf": [
+        { "if": { "properties": { "status": { "const": "published" } } }, "then": { "properties": { "evidence_status": { "const": "sourced" }, "evidence_source_ids": { "minItems": 1 } } } },
+        { "if": { "properties": { "consensus": { "const": "contested" } } }, "then": { "properties": { "evidence_source_ids": { "minItems": 2 } } } }
+      ]
+    },
+    "reviewEvent": {
+      "type": "object",
+      "required": ["id", "identity_key", "claim_id", "reviewer", "action", "occurred_at", "resolution_note"],
+      "properties": {
+        "id": { "$ref": "#/$defs/reviewId" },
+        "identity_key": { "type": "string", "minLength": 1 },
+        "claim_id": { "$ref": "#/$defs/claimId" },
+        "reviewer": { "type": "string", "minLength": 1 },
+        "action": { "type": "string", "minLength": 1 },
+        "occurred_at": { "type": "string", "format": "date-time" },
+        "resolution_note": { "type": ["string", "null"] }
+      },
+      "additionalProperties": false
+    },
+    "guidedPath": {
+      "type": "object",
+      "required": ["id", "title", "subtitle", "nodes", "edges", "introduction"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "title": { "type": "string", "minLength": 1 },
+        "subtitle": { "type": "string" },
+        "nodes": { "type": "array", "items": { "$ref": "#/$defs/nodeId" }, "minItems": 2 },
+        "edges": { "type": "array", "items": { "$ref": "#/$defs/claimId" } },
+        "introduction": { "type": "string" }
+      },
+      "additionalProperties": false
+    }
+  }
+}

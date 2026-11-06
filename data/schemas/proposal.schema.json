@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://religion-almanac.example/schemas/proposal-1.0.0.json",
+  "title": "Religion Almanac add-record proposal",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["proposal_version", "proposal_id", "base_release", "base_checksum", "created_at", "record", "record_changes", "sources", "claims", "curator_notes"],
+  "properties": {
+    "proposal_version": { "const": "1.0.0" },
+    "proposal_id": { "type": "string", "pattern": "^[0-9a-f]{24}$" },
+    "example_only": { "type": "boolean" },
+    "base_release": { "type": "string", "minLength": 1 },
+    "base_checksum": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "created_at": { "type": "string", "format": "date-time" },
+    "record": {
+      "oneOf": [
+        { "$ref": "https://religion-almanac.example/schemas/seed-1.0.0.json#/$defs/node" },
+        { "type": "null" }
+      ]
+    },
+    "record_changes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["node_id", "add_name_variants", "add_external_identifiers", "reason"],
+        "properties": {
+          "node_id": { "$ref": "https://religion-almanac.example/schemas/seed-1.0.0.json#/$defs/nodeId" },
+          "add_name_variants": {
+            "type": "array",
+            "items": { "$ref": "https://religion-almanac.example/schemas/seed-1.0.0.json#/$defs/nameVariant" }
+          },
+          "add_external_identifiers": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["namespace", "value"],
+              "properties": { "namespace": { "type": "string", "minLength": 1 }, "value": { "type": "string", "minLength": 1 } }
+            }
+          },
+          "reason": { "type": "string", "minLength": 1, "maxLength": 1000 }
+        }
+      }
+    },
+    "sources": {
+      "type": "array",
+      "items": { "$ref": "https://religion-almanac.example/schemas/seed-1.0.0.json#/$defs/source" },
+      "uniqueItems": true
+    },
+    "claims": {
+      "type": "array",
+      "items": { "$ref": "https://religion-almanac.example/schemas/seed-1.0.0.json#/$defs/claim" },
+      "uniqueItems": true
+    },
+    "curator_notes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["classification_uncertain", "duplicate_override_reason", "note"],
+      "properties": {
+        "classification_uncertain": { "type": "boolean" },
+        "duplicate_override_reason": { "type": ["string", "null"], "maxLength": 1000 },
+        "note": { "type": ["string", "null"], "maxLength": 2000 },
+        "warnings": { "type": "array", "items": { "type": "string", "minLength": 1, "maxLength": 1000 }, "maxItems": 20 }
+      }
+    }
+  },
+  "oneOf": [
+    { "properties": { "record": { "$ref": "https://religion-almanac.example/schemas/seed-1.0.0.json#/$defs/node" } } },
+    { "properties": { "record_changes": { "minItems": 1 } } }
+  ]
+}

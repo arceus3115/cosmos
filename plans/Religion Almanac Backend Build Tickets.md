@@ -1,8 +1,26 @@
 # Religion Almanac: Backend Build Tickets
 
-*Backlog draft · based on the edited Backend Data Processing & Modeling Design · implementation not started*
+*Implementation snapshot · 5 November 2026 · based on the edited Backend Data Processing & Modeling Design*
 
-These tickets translate the current inputs into a build sequence. Architecture choices that still need a precise contract are isolated in **B-001**; implementation tickets depend on that decision rather than assuming details.
+These tickets translate the current inputs into a build sequence. Prototype code uses the explicit defaults in **B-001**'s ADR; unresolved publication and provider choices remain open and do not imply production approval.
+
+## Prototype status
+
+*Execution update · 5 November 2026.* Runtime dependencies are installed. The canonical seed validated, the prototype release built to `exports/current`, and the PostgreSQL migration and loader ran against a disposable local PostgreSQL 17 instance. The API was started against that loaded release and its health, graph, detail, neighbor, search, and path endpoints returned HTTP 200. The temporary server and database were stopped after execution. No formal test suite was run.
+
+| Ticket | Current state |
+| --- | --- |
+| B-001 | Review pending. Prototype defaults and remaining choices are recorded in [ADR 0001](../docs/adr/0001-backend-data-contracts.md). |
+| B-101–B-103 | Schemas, content-derived ID migration/aliases, and pre-load validator are implemented. `ra-pipeline validate` passed on the canonical seed; it loaded successfully through the database constraints. Broader invalid-record fixtures remain unrun. |
+| B-201 | Normalized-only staging contract and provenance capture are implemented; source-specific connectors remain open and staging was not exercised in this run. |
+| B-202 | PostgreSQL migration applied and transactional loader executed against a disposable local PostgreSQL 17 instance. Reconciled counts: 7 sources, 18 nodes, 8 claims, 25 date assertions, 0 review events, and 2 guided paths. A persistent project database is still unconfigured. |
+| B-203 | `ra-pipeline build --include-prototype --output exports/current` generated CSV, JSON graph/search/detail, RDF, JSON-LD, `NOTICE`, and the release manifest for `prototype-01`. Repeat-build checksum and export round-trip checks remain. |
+| B-301–B-303 | API runtime exercised against the matching build/database release. Health, graph, node, claim, source, neighbor, search, and path requests returned HTTP 200; graph served 18 nodes/22 links, search returned 2 “Atra” matches, and the selected flood path returned one 1-hop route. Broader query fixtures remain unrun. |
+| B-304 | Implemented: the browser loads the API graph first, keeps release-scoped detail caching, fetches record/citation details on selection, uses API search/path queries, exposes connection and fallback release status, and preserves bundled data as an identified fallback. Local CORS and startup instructions are documented. Runtime verification of this change remains pending. |
+| B-401 | Provider-neutral vector-candidate protocol exists; provider selection and actual indexing remain unstarted. |
+| B-402 | Build manifest/release matching exists; operations and rollback procedures remain. |
+
+No formal tests have been added or run. `python -m compileall` completed for the backend Python packages; this checks syntax only. Runtime execution above is a manual smoke run, not a substitute for the ticket exit fixtures.
 
 ## Inputs carried into the backlog
 
@@ -115,6 +133,14 @@ Return several non-dominated paths with per-edge rationale, direction certainty,
 
 **Exit:** deterministic results for connected, disconnected, cyclic, and competing-route fixtures; output explains why each path is included and does not imply unsupported certainty.
 
+### B-304 · Connect the prototype page to bootstrap and detail APIs
+
+**Size:** M · **Depends on:** B-301, B-302
+
+Load the compact graph before requesting any node details. Fetch node/claim/source details on selection, cache them by release ID, and show a clear unavailable state if an API request fails. Keep the static seed as a development fallback only if the release identity is visible.
+
+**Exit:** the graph renders from `/v1/graph` before any detail request completes; selecting a node loads the matching release's details; a release change invalidates cached detail records; browser interaction works with the existing filters and guided paths.
+
 ## M4 — Add vector-backed discovery
 
 ### B-401 · Add vector indexing for candidate discovery
@@ -145,6 +171,6 @@ B-001
                             ↘      ↙
                               B-402
 
-B-401 depends on B-001 + B-201 + B-202; it can follow the core API release.
+B-401 depends on B-001 + B-201 + B-202; it can follow the core API release. B-304 can follow B-301/B-302 independently of vector search.
 ```
 

@@ -1,0 +1,19 @@
+{
+  "name": "religion-almanac",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0"
+  },
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 5173 --strictPort",
+    "dev:all": "concurrently --kill-others -n web,api -p name \"vite --host 127.0.0.1 --port 5173 --strictPort\" \"uvicorn religion_almanac_api.main:app --app-dir api --host 127.0.0.1 --port 8000 --reload --reload-dir api\"",
+    "dev:editor": "vite --host 127.0.0.1 --port 5173 --strictPort --open /tools/record-editor/",
+    "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.5",
+    "vite": "^8.3.6"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://religion-almanac.example/schemas/aliases-1.0.0.json",
+  "title": "Legacy ID aliases",
+  "type": "object",
+  "required": ["aliases"],
+  "properties": {
+    "aliases": {
+      "type": "object",
+      "patternProperties": {
+        "^node:.+$": { "type": "string", "pattern": "^ra:node:[0-9a-f]{24}$" },
+        "^source:.+$": { "type": "string", "pattern": "^ra:source:[0-9a-f]{24}$" },
+        "^claim:.+$": { "type": "string", "pattern": "^ra:claim:[0-9a-f]{24}$" }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

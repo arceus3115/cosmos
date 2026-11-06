@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="almanac-api-base" content="/" />
+    <meta name="description" content="Local curator tool for proposing Religion Almanac records." />
+    <title>Add a record — Religion Almanac</title>
+    <link rel="stylesheet" href="./editor.css" />
+    <script type="module" src="./editor.js"></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="http://127.0.0.1:5173" aria-label="Religion Almanac Explore">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+        <span>RELIGION<br />ALMANAC</span>
+      </a>
+      <div class="top-title"><span class="eyebrow">LOCAL CURATOR TOOL</span><h1>Add a record</h1></div>
+      <div class="top-actions">
+        <label class="draft-picker-label" for="draftPicker">DRAFT</label>
+        <select id="draftPicker" aria-label="Choose a saved draft"></select>
+        <button type="button" id="newDraftButton" class="quiet-button">New</button>
+        <button type="button" id="duplicateDraftButton" class="quiet-button">Duplicate</button>
+        <button type="button" id="deleteDraftButton" class="quiet-button">Delete</button>
+      </div>
+    </header>
+
+    <div id="connectionStatus" class="connection-status" role="status" aria-live="polite">Connecting to the active graph release…</div>
+    <main class="editor-layout">
+      <aside class="side-rail">
+        <ol id="stepNav" class="step-nav" aria-label="Proposal steps">
+          <li><button type="button" data-go-step="0" aria-current="step"><span>01</span> Identify</button></li>
+          <li><button type="button" data-go-step="1"><span>02</span> Describe</button></li>
+          <li><button type="button" data-go-step="2"><span>03</span> Sources & claims</button></li>
+          <li><button type="button" data-go-step="3"><span>04</span> Review</button></li>
+        </ol>
+        <div class="side-note"><strong>Local draft</strong><p>Your draft stays in this browser until you export a proposal JSON file. Exported records remain drafts until a Git review changes their status.</p></div>
+        <div id="savedStatus" class="saved-status" role="status" aria-live="polite">Draft not saved yet</div>
+      </aside>
+
+      <form id="recordForm" class="editor-card" novalidate>
+        <section class="step-panel" data-step-panel="0" aria-labelledby="identifyTitle">
+          <div class="panel-kicker">01 / IDENTIFY</div>
+          <h2 id="identifyTitle" tabindex="-1">What are you adding?</h2>
+          <p class="intro">Choose the role this record plays in the Almanac. A story is the narrative subject; a text is a textual witness or collection; a work is a distinct authored or performed creation.</p>
+          <fieldset class="type-options">
+            <legend>Record type</legend>
+            <label class="type-option"><input type="radio" name="recordType" value="tradition" /><span><strong>Tradition</strong><small>A historical religious, cultural, or literary context.</small></span></label>
+            <label class="type-option"><input type="radio" name="recordType" value="text" /><span><strong>Text</strong><small>A corpus, collection, or textual source used as a primary anchor.</small></span></label>
+            <label class="type-option"><input type="radio" name="recordType" value="story" /><span><strong>Story</strong><small>A narrative subject or episode represented across texts or retellings.</small></span></label>
+            <label class="type-option"><input type="radio" name="recordType" value="work" /><span><strong>Work</strong><small>An authored, performed, or adapted creation whose production or reception is traced.</small></span></label>
+          </fieldset>
+          <label class="field-label" for="preferredLabel">Preferred label <span class="required">Required</span></label>
+          <input id="preferredLabel" name="preferredLabel" data-field="label" maxlength="240" autocomplete="off" placeholder="Name in its preferred written form" />
+          <label class="field-label" for="identityDisambiguator">Identity disambiguator <span class="optional">Only for a distinct record with the same type and label</span></label>
+          <input id="identityDisambiguator" data-field="identityDisambiguator" maxlength="240" placeholder="For example, a stable catalog ID or concise historical context" />
+          <p class="field-help">This is frozen into the stable identity key when you continue. Do not use it just to change the display label.</p>
+          <div class="field-row search-row">
+            <button type="button" id="searchNameButton" class="outline-button">Search names and identifiers</button>
+            <span class="field-help">Search before creating a new record.</span>
+          </div>
+          <label class="field-label" for="identityQuery">Name or external identifier</label>
+          <input id="identityQuery" autocomplete="off" placeholder="For example, Genesis or Q12345" />
+          <div id="matchStatus" class="inline-status" role="status" aria-live="polite"></div>
+          <div id="matchList" class="match-list"></div>
+          <section id="matchDetails" class="match-details" aria-live="polite" hidden></section>
+
+          <section id="aliasPanel" class="alias-panel" hidden aria-labelledby="aliasTitle">
+            <div class="section-heading"><div><span class="eyebrow">EXISTING RECORD</span><h3 id="aliasTitle">Propose a missing name or identifier</h3></div><button type="button" id="cancelAliasButton" class="text-button">Cancel</button></div>
+            <p id="aliasTarget" class="target-record"></p>
+            <div class="two-columns">
+              <label><span class="field-label">Written name</span><input id="aliasValue" maxlength="240" /></label>
+              <label><span class="field-label">Language</span><input id="aliasLanguage" maxlength="80" placeholder="Optional" /></label>
+              <label><span class="field-label">Script</span><input id="aliasScript" maxlength="80" placeholder="Optional" /></label>
+              <label><span class="field-label">Name role</span><select id="aliasRole"><option value="alternate">Alternate</option><option value="transliteration">Transliteration</option><option value="historical">Historical</option></select></label>
+              <label><span class="field-label">Identifier namespace</span><input id="aliasNamespace" maxlength="100" placeholder="For example, wikidata" /></label>
+              <label><span class="field-label">Identifier value</span><input id="aliasIdentifier" maxlength="240" placeholder="For example, Q12345" /></label>
+            </div>
+            <label class="field-label" for="aliasReason">Why is this addition needed? <span class="required">Required</span></label>
+            <textarea id="aliasReason" rows="2" maxlength="1000" placeholder="Explain the source or catalog evidence for this name or identifier."></textarea>
+            <button type="button" id="previewAliasButton" class="primary-button">Review this proposal <span>→</span></button>
+          </section>
+
+          <label class="uncertain-check"><input id="classificationUncertain" type="checkbox" data-field="classificationUncertain" /> <span>I’m unsure whether this is the right record type.</span></label>
+          <div id="identityErrors" class="error-summary" role="alert" hidden></div>
+        </section>
+
+        <section class="step-panel" data-step-panel="1" aria-labelledby="describeTitle" hidden>
+          <div class="panel-kicker">02 / DESCRIBE</div>
+          <h2 id="describeTitle" tabindex="-1">Describe the record</h2>
+          <p id="typeGuidance" class="guidance-card"></p>
+          <div class="locked-identity"><span>Stable identity key</span><code id="identityKeyDisplay">Set when this draft is first saved</code><small>Changing the label later will not change the record ID.</small><small id="identityLockWarning" hidden>Type changed after identity was established. Review the summary, parent, and date aspects; the stable ID remains frozen.</small></div>
+          <label class="field-label" for="summary">Neutral summary <span class="required">Required</span></label>
+          <textarea id="summary" data-field="summary" rows="4" maxlength="1000" placeholder="Describe what this record is, what the date refers to, and where attribution or textual scope is relevant. Avoid treating a diverse community as uniform."></textarea>
+          <div class="field-help counter"><span>Aim for about 60 words. Include creator, form, edition, or text scope here when it matters.</span><span id="summaryCount">0 / 1000</span></div>
+
+          <label class="field-label" for="languages">Languages <span class="optional">Optional</span></label>
+          <input id="languages" data-field="languagesText" placeholder="Separate languages with commas" />
+
+          <div class="section-heading"><div><span class="eyebrow">NAME VARIANTS</span><h3>Other written forms</h3></div><button type="button" class="small-add" data-add-row="nameVariants">+ Add a name</button></div>
+          <div id="nameRows" class="repeat-rows"></div>
+
+          <label class="field-label" for="parentId">Context / part of <span class="optional">Optional</span></label>
+          <select id="parentId" data-field="parentId"><option value="">No parent</option></select>
+          <p class="field-help">This records containment or explicit hierarchy. It does not claim the selected record influenced this one.</p>
+
+          <div class="section-heading"><div><span class="eyebrow">DATE ASSERTIONS</span><h3>Dates and uncertainty</h3></div><button type="button" class="small-add" data-add-row="dates">+ Add a date</button></div>
+          <p class="field-help">Enter BCE years as negative numbers and CE years as positive numbers. Year zero is not used. Leave a bound empty when it is open or unknown.</p>
+          <p class="field-help">Display labels are not recalculated from the numbers. Review each label against its numeric bounds in the preview.</p>
+          <div id="dateRows" class="repeat-rows"></div>
+          <div id="describeErrors" class="error-summary" role="alert" hidden></div>
+        </section>
+
+        <section class="step-panel" data-step-panel="2" aria-labelledby="sourcesTitle" hidden>
+          <div class="panel-kicker">03 / SOURCES & CLAIMS</div>
+          <h2 id="sourcesTitle" tabindex="-1">Attach evidence and identifiers</h2>
+          <p class="intro">Bibliography documents a record. A claim that one item influenced another is a separate assertion with its own evidence.</p>
+
+          <div class="section-heading"><div><span class="eyebrow">SOURCES</span><h3>Bibliography</h3></div></div>
+          <label class="field-label" for="sourceSearch">Find a source in the active release</label>
+          <div class="field-row"><input id="sourceSearch" placeholder="Search title, author, or source ID" /><button type="button" id="searchSourceButton" class="outline-button">Search</button></div>
+          <div id="sourceMatches" class="match-list"></div>
+          <div id="selectedSources" class="selected-list"></div>
+
+          <details class="new-source-details">
+            <summary>Add a bibliographic source</summary>
+            <div class="two-columns source-fields">
+              <label><span class="field-label">Title <span class="required">Required</span></span><input id="sourceTitle" maxlength="300" /></label>
+              <label><span class="field-label">Author / maintainer</span><input id="sourceAuthor" maxlength="240" /></label>
+              <label><span class="field-label">Container / edition</span><input id="sourceContainer" maxlength="240" /></label>
+              <label><span class="field-label">Publisher</span><input id="sourcePublisher" maxlength="240" /></label>
+              <label><span class="field-label">Year / version</span><input id="sourceYear" maxlength="100" placeholder="For example, 2020 or n.d." /></label>
+              <label><span class="field-label">URL</span><input id="sourceUrl" type="url" maxlength="1000" placeholder="https://…" /></label>
+              <label class="wide"><span class="field-label">License / terms <span class="required">Required</span></span><input id="sourceLicense" maxlength="500" placeholder="State the terms for this source or metadata." /></label>
+            </div>
+            <p class="field-help">Add bibliographic metadata and a link only. Do not paste a full text or copyrighted excerpt.</p>
+            <button type="button" id="addSourceButton" class="outline-button">Add source to proposal</button>
+          </details>
+
+          <div class="section-heading"><div><span class="eyebrow">EXTERNAL IDENTIFIERS</span><h3>Catalog IDs and links</h3></div><button type="button" class="small-add" data-add-row="externalIdentifiers">+ Add an identifier</button></div>
+          <div id="identifierRows" class="repeat-rows"></div>
+          <div class="section-heading"><div><span class="eyebrow">EXTERNAL LINKS</span><h3>Other helpful pages</h3></div><button type="button" class="small-add" data-add-row="externalLinks">+ Add a link</button></div>
+          <div id="linkRows" class="repeat-rows"></div>
+
+          <div class="section-heading claim-heading"><div><span class="eyebrow">OPTIONAL / SEPARATE CLAIM</span><h3>Propose a relationship</h3></div><button type="button" id="addClaimButton" class="small-add">+ Add a claim</button></div>
+          <p class="field-help">A parent is not an influence claim. A shared motif or similarity alone does not show transmission.</p>
+          <div id="claimRows" class="repeat-rows"></div>
+          <div id="sourceErrors" class="error-summary" role="alert" hidden></div>
+        </section>
+
+        <section class="step-panel" data-step-panel="3" aria-labelledby="reviewTitle" hidden>
+          <div class="panel-kicker">04 / REVIEW</div>
+          <h2 id="reviewTitle" tabindex="-1">Review the proposal</h2>
+          <p class="intro">Check how this record will appear and what it does not assert. Export creates a proposal file; it does not publish or submit it.</p>
+          <div id="recordPreview" class="record-preview"></div>
+          <div id="reviewFlags" class="review-flags" hidden></div>
+          <label class="field-label" for="duplicateReason">Reason for continuing past a possible duplicate <span class="optional">Required only when a likely match was found</span></label>
+          <textarea id="duplicateReason" data-field="duplicateOverrideReason" rows="2" maxlength="1000" placeholder="Explain why this is a distinct entity, or why the proposed alias belongs to this record."></textarea>
+          <label class="field-label" for="curatorNote">Curator note for reviewers <span class="optional">Optional</span></label>
+          <textarea id="curatorNote" data-field="note" rows="3" maxlength="2000" placeholder="Add context that will help a reviewer evaluate this proposal."></textarea>
+          <div class="status-callout"><strong>Draft proposal</strong><span>New canonical records are created as <code>draft</code>. A reviewer must approve the Git change and explicitly change lifecycle status before publication.</span></div>
+          <div id="reviewErrors" class="error-summary" role="alert" hidden></div>
+          <div id="proposalPreview" class="proposal-preview" hidden><div class="section-heading"><div><span class="eyebrow">PROPOSAL JSON</span><h3>Ready to export</h3></div><button type="button" id="hideJsonButton" class="text-button">Hide</button></div><pre id="proposalJson"></pre></div>
+        </section>
+
+        <footer class="form-actions">
+          <button type="button" id="backButton" class="outline-button">← Back</button>
+          <div class="action-right"><span id="stepLabel" class="step-label">Step 1 of 4</span><button type="button" id="nextButton" class="primary-button">Continue <span>→</span></button><button type="button" id="validateExportButton" class="primary-button" hidden>Validate & export JSON <span>↓</span></button></div>
+        </footer>
+      </form>
+    </main>
+    <footer class="page-footer">Built for local curation · Canonical data changes through reviewable Git diffs</footer>
+  </body>
+</html>

@@ -1,0 +1,85 @@
+{
+  "proposal_version": "1.0.0",
+  "proposal_id": "48988a6274aa3450cc98dd66",
+  "example_only": true,
+  "base_release": "prototype-01",
+  "base_checksum": "2cb8da96e09deb18e071932b1f7235bba74b5bcc4e872750a7e74870b6fef687",
+  "created_at": "2026-11-06T00:00:00Z",
+  "record": {
+    "id": "ra:node:bc37f4ca114cf0f779691bd2",
+    "identity_key": "node|work|Example Work with evidence (schema sample)",
+    "type": "work",
+    "label": "Example Work with evidence (schema sample)",
+    "name_variants": [],
+    "summary": "Synthetic example record for demonstrating the local curator workflow. Do not apply or publish.",
+    "status": "draft",
+    "parent_id": "ra:node:07daaa2359c148bacc726f54",
+    "hierarchy_relation": "part_of",
+    "hierarchy_evidence_source_ids": [
+      "ra:source:b50312d4dffe07947b64931a"
+    ],
+    "evidence_status": "sourced",
+    "source_ids": [
+      "ra:source:b50312d4dffe07947b64931a"
+    ],
+    "languages": [],
+    "external_identifiers": [],
+    "external_links": [],
+    "date_assertions": [
+      {
+        "id": "ra:date:d7ebe57e2cb00e3ccffaaf34",
+        "aspect": "composition_or_publication",
+        "start_year": null,
+        "end_year": null,
+        "year_convention": "historical_bce_ce",
+        "precision": "approximate",
+        "display_label": "Example publication range",
+        "uncertainty_note": "Example-only date; replace with sourced evidence before curation.",
+        "evidence_source_ids": [
+          "ra:source:b50312d4dffe07947b64931a"
+        ]
+      }
+    ]
+  },
+  "record_changes": [],
+  "sources": [
+    {
+      "id": "ra:source:b50312d4dffe07947b64931a",
+      "identity_key": "source|Example Catalog|Synthetic bibliographic record|https://example.org/almanac-editor-example",
+      "title": "Synthetic bibliographic record",
+      "author": "Example Catalog",
+      "container": "Workflow schema examples",
+      "publisher": "Example Catalog",
+      "year": "n.d.",
+      "url": "https://example.org/almanac-editor-example",
+      "license": "CC0 1.0; synthetic example metadata only",
+      "status": "draft"
+    }
+  ],
+  "claims": [
+    {
+      "id": "ra:claim:c40bae3efc4995b9caaf8359",
+      "identity_key": "claim|ra:node:bc37f4ca114cf0f779691bd2|motif_parallel|ra:node:6a321f8f77129c981774c3af|synthetic editor example",
+      "subject_id": "ra:node:bc37f4ca114cf0f779691bd2",
+      "object_id": "ra:node:6a321f8f77129c981774c3af",
+      "relation_type": "motif_parallel",
+      "direction": "unknown",
+      "confidence": 2,
+      "consensus": "majority",
+      "rationale": "Synthetic example claim. It is not a scholarly assertion.",
+      "date_label": null,
+      "date_assertions": [],
+      "inferred": false,
+      "status": "draft",
+      "evidence_status": "sourced",
+      "evidence_source_ids": [
+        "ra:source:b50312d4dffe07947b64931a"
+      ]
+    }
+  ],
+  "curator_notes": {
+    "classification_uncertain": false,
+    "duplicate_override_reason": null,
+    "note": "Synthetic workflow example only. Do not apply or publish."
+  }
+}

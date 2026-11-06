@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://religion-almanac.example/schemas/candidate-1.0.0.json",
+  "title": "Normalized ingestion candidate",
+  "type": "object",
+  "required": ["candidate_id", "status", "provenance", "normalized_checksum", "records"],
+  "properties": {
+    "candidate_id": { "type": "string", "pattern": "^[0-9a-f]{24}$" },
+    "status": { "enum": ["candidate", "quarantined"] },
+    "provenance": {
+      "type": "object",
+      "required": ["source_url", "license", "connector_version", "normalization_version", "retrieved_at", "upstream_version"],
+      "properties": {
+        "source_url": { "type": "string", "format": "uri" },
+        "license": { "type": ["string", "null"] },
+        "connector_version": { "type": "string", "minLength": 1 },
+        "normalization_version": { "type": "string", "minLength": 1 },
+        "retrieved_at": { "type": "string", "format": "date-time" },
+        "upstream_version": { "type": ["string", "null"] }
+      },
+      "additionalProperties": false
+    },
+    "normalized_checksum": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "records": { "type": "array", "items": { "type": "object" } }
+  },
+  "additionalProperties": false,
+  "allOf": [{
+    "if": { "properties": { "status": { "const": "candidate" } } },
+    "then": { "properties": { "provenance": { "properties": { "license": { "type": "string", "minLength": 1 } } } } }
+  }]
+}

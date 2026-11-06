@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+exports/current/
+exports/site-release/
+exports/.site-release-generated
+node_modules/
+dist/
+.ruff_cache/
+.pytest_cache/

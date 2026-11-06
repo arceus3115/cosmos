@@ -1,0 +1,46 @@
+{
+  "proposal_version": "1.0.0",
+  "proposal_id": "4eec6bfe14623f2feb6fd560",
+  "example_only": true,
+  "base_release": "prototype-01",
+  "base_checksum": "2cb8da96e09deb18e071932b1f7235bba74b5bcc4e872750a7e74870b6fef687",
+  "created_at": "2026-11-06T00:00:00Z",
+  "record": {
+    "id": "ra:node:a5f96621551998e8b3de82ad",
+    "identity_key": "node|tradition|Example Tradition (schema sample)",
+    "type": "tradition",
+    "label": "Example Tradition (schema sample)",
+    "name_variants": [],
+    "summary": "Synthetic example record for demonstrating the local curator workflow. Do not apply or publish.",
+    "status": "draft",
+    "parent_id": null,
+    "hierarchy_relation": null,
+    "hierarchy_evidence_source_ids": [],
+    "evidence_status": "unsourced",
+    "source_ids": [],
+    "languages": [],
+    "external_identifiers": [],
+    "external_links": [],
+    "date_assertions": [
+      {
+        "id": "ra:date:467d2a5c6d80b5010194c79d",
+        "aspect": "historical_scope",
+        "start_year": null,
+        "end_year": null,
+        "year_convention": "historical_bce_ce",
+        "precision": "approximate",
+        "display_label": "Example period",
+        "uncertainty_note": "Example-only date; replace with sourced evidence before curation.",
+        "evidence_source_ids": []
+      }
+    ]
+  },
+  "record_changes": [],
+  "sources": [],
+  "claims": [],
+  "curator_notes": {
+    "classification_uncertain": false,
+    "duplicate_override_reason": null,
+    "note": "Synthetic workflow example only. Do not apply or publish."
+  }
+}
